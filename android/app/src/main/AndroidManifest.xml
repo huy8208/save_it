@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.savis">
+    package="com.example.save_it">
    <application
-        android:label="savis"
+        android:label="save_it"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

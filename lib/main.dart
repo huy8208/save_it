@@ -1,25 +1,21 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:savis/bindings/global_bindings.dart';
+import 'package:save_it/app/bindings/global_binding.dart';
+import 'package:save_it/app/core/theme/app_theme.dart';
+import 'package:save_it/app/core/values/translations/app_translations.dart';
+import 'package:save_it/app/routes/app_pages.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
+void main() {
   GlobalBinding().dependencies();
-  runApp(GetMaterialApp(
-    debugShowCheckedModeBanner: false,
-    // home: LandingPage(),
-    title: "Savis",
-    theme: ThemeData(
-        appBarTheme: AppBarTheme(
-            systemOverlayStyle: SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      statusBarBrightness: Platform.isIOS ? Brightness.light : Brightness.dark,
-      statusBarIconBrightness:
-          Platform.isIOS ? Brightness.light : Brightness.dark,
-    ))),
-  ));
+  runApp(
+    GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: Routes.INITIAL,
+      theme: appThemeData,
+      defaultTransition: Transition.fade,
+      getPages: AppPages.pages,
+      locale: const Locale('vi', 'VN'),
+      translationsKeys: AppTranslation.translations,
+    ),
+  );
 }
