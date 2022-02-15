@@ -1,13 +1,13 @@
 import 'package:get/get.dart';
-import 'package:save_it/app/modules/home/controller.dart';
+import 'package:save_it/app/modules/sample_page/controller.dart';
 import 'package:save_it/app/services/repository/api_repository.dart';
 
-class HomeBinding implements Bindings {
+class DetailsBinding implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<HomeController>(
+    Get.lazyPut<DetailsController>(
       () {
-        return HomeController(
+        return DetailsController(
           repository: ApiRepository(),
         );
       },

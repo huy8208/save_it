@@ -1,9 +1,10 @@
 import 'package:get/get.dart';
 import 'package:save_it/app/core/middleware/middleware.dart';
-import 'package:save_it/app/modules/details/binding.dart';
-import 'package:save_it/app/modules/details/page.dart';
-import 'package:save_it/app/modules/home/binding.dart';
-import 'package:save_it/app/modules/home/page.dart';
+import 'package:save_it/app/modules/home_page/binding.dart';
+import 'package:save_it/app/modules/home_page/page.dart';
+import 'package:save_it/app/modules/sample_page/binding.dart';
+import 'package:save_it/app/modules/sample_page/page.dart';
+
 part './app_routes.dart';
 
 class AppPages {

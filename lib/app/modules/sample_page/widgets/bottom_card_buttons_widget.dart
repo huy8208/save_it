@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:save_it/app/modules/details/controller.dart';
+import 'package:save_it/app/modules/sample_page/controller.dart';
 import 'package:save_it/app/widgets/button_widget.dart';
 
 class CardBottomButtonsWidget extends StatelessWidget {

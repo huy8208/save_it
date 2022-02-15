@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:save_it/app/modules/home/controller.dart';
-import 'package:save_it/app/routes/app_pages.dart';
+import 'package:save_it/app/modules/home_page/controller.dart';
+import 'package:save_it/app/modules/sample_page/controller.dart';
 import 'package:save_it/app/widgets/button_widget.dart';
 
-class HomePage extends GetView<HomeController> {
+class DetailsPage extends GetView<DetailsController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GetX<HomeController>(
-        builder: (HomeController controller) {
+      body: GetX<DetailsController>(
+        builder: (DetailsController controller) {
+          controller.something = Get.find<HomeController>().something;
           return Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(controller.something),
+                const Text('DETAILS PAGE'),
                 RaisedButtonCustomWidget(
-                  icon: Icons.savings_rounded,
+                  icon: Icons.savings_outlined,
                   onPressed: () {
-                    Get.toNamed(Routes.DETAILS);
+                    Get.back();
                   },
                   text: controller.something,
                 ),
