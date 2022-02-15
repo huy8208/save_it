@@ -5,18 +5,16 @@ import 'package:save_it/app/modules/home_page/page.dart';
 import 'package:save_it/app/modules/sample_page/binding.dart';
 import 'package:save_it/app/modules/sample_page/page.dart';
 
-part './app_routes.dart';
-
 class AppPages {
   static final List<GetPage<dynamic>> pages = <GetPage<dynamic>>[
     GetPage<dynamic>(
-      name: Routes.INITIAL,
+      name: '/',
       page: () => HomePage(),
       binding: HomeBinding(),
     ),
     GetPage<dynamic>(
-      name: Routes.DETAILS,
-      page: () => DetailsPage(),
+      name: '/sample_page',
+      page: () => SamplePage(),
       binding: DetailsBinding(),
       middlewares: <GetMiddleware>[HomeMiddleware()],
     ),

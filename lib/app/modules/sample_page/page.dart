@@ -4,7 +4,7 @@ import 'package:save_it/app/modules/home_page/controller.dart';
 import 'package:save_it/app/modules/sample_page/controller.dart';
 import 'package:save_it/app/widgets/button_widget.dart';
 
-class DetailsPage extends GetView<DetailsController> {
+class SamplePage extends GetView<DetailsController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +16,7 @@ class DetailsPage extends GetView<DetailsController> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(controller.something),
-                const Text('DETAILS PAGE'),
+                const Text('SAMPLE PAGE'),
                 RaisedButtonCustomWidget(
                   icon: Icons.savings_outlined,
                   onPressed: () {

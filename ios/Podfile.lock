@@ -2,21 +2,34 @@ PODS:
   - Flutter (1.0.0)
   - path_provider_ios (0.0.1):
     - Flutter
+  - Plaid (2.3.1)
+  - plaid_flutter (0.0.1):
+    - Flutter
+    - Plaid (= 2.3.1)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - path_provider_ios (from `.symlinks/plugins/path_provider_ios/ios`)
+  - plaid_flutter (from `.symlinks/plugins/plaid_flutter/ios`)
+
+SPEC REPOS:
+  trunk:
+    - Plaid
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
   path_provider_ios:
     :path: ".symlinks/plugins/path_provider_ios/ios"
+  plaid_flutter:
+    :path: ".symlinks/plugins/plaid_flutter/ios"
 
 SPEC CHECKSUMS:
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
   path_provider_ios: 7d7ce634493af4477d156294792024ec3485acd5
+  Plaid: 370b301a884270b5ab796f7a4bd72e4d1cc8be8b
+  plaid_flutter: e8c18a8f8eb96d4bdda6a69aac5e2d9c25b10f90
 
-PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+PODFILE CHECKSUM: 7368163408c647b7eb699d0d788ba6718e18fb8d
 
 COCOAPODS: 1.11.2

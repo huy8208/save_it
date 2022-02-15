@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:save_it/app/modules/home_page/controller.dart';
-import 'package:save_it/app/routes/app_pages.dart';
 import 'package:save_it/app/widgets/button_widget.dart';
 
 class HomePage extends GetView<HomeController> {
@@ -18,7 +17,7 @@ class HomePage extends GetView<HomeController> {
                 RaisedButtonCustomWidget(
                   icon: Icons.savings_rounded,
                   onPressed: () {
-                    Get.toNamed(Routes.DETAILS);
+                    Get.toNamed('/sample_page');
                   },
                   text: controller.something,
                 ),
