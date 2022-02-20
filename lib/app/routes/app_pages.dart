@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 import 'package:save_it/app/core/middleware/middleware.dart';
 import 'package:save_it/app/modules/home_page/binding.dart';
 import 'package:save_it/app/modules/home_page/page.dart';
+import 'package:save_it/app/modules/root_app/binding.dart';
+import 'package:save_it/app/modules/root_app/page.dart';
 import 'package:save_it/app/modules/sample_page/binding.dart';
 import 'package:save_it/app/modules/sample_page/page.dart';
 
@@ -17,6 +19,11 @@ class AppPages {
       page: () => SamplePage(),
       binding: DetailsBinding(),
       middlewares: <GetMiddleware>[HomeMiddleware()],
+    ),
+    GetPage<dynamic>(
+      name: '/root',
+      page: () => RootPage(),
+      binding: RootBinding(),
     ),
   ];
 }

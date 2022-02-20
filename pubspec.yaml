@@ -13,9 +13,11 @@ dependencies:
   dio: ^4.0.4
   flutter:
     sdk: flutter
+  font_awesome_flutter: ^9.2.0
   get: ^4.6.1
   get_storage: ^2.0.3
   http: ^0.13.4
+  persistent_bottom_nav_bar: ^4.0.2
   plaid_flutter: ^2.2.0
 
 dev_dependencies:

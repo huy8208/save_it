@@ -10,7 +10,7 @@ class SamplePage extends GetView<DetailsController> {
     return Scaffold(
       body: GetX<DetailsController>(
         builder: (DetailsController controller) {
-          controller.something = Get.find<HomeController>().something;
+          controller.something = Get.find<DetailsController>().something;
           return Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
