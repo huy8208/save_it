@@ -17,7 +17,7 @@ class AppPages {
     GetPage<dynamic>(
       name: '/sample_page',
       page: () => SamplePage(),
-      binding: DetailsBinding(),
+      binding: SamplePageBinding(),
       middlewares: <GetMiddleware>[HomeMiddleware()],
     ),
     GetPage<dynamic>(
