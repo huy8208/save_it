@@ -1,4 +1,4 @@
-import 'package:save_it/app/services/controller/api.dart';
+import 'package:save_it/app/services/providers/api.dart';
 
 class ApiRepository {
   final ApiDio apiDio = ApiDio();
