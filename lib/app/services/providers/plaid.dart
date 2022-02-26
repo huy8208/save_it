@@ -1,8 +1,10 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
+import 'package:intl/intl.dart';
 import 'package:plaid_flutter/plaid_flutter.dart';
 import 'package:save_it/app/core/utils/keys.dart';
+import 'package:save_it/app/models/bank_details.dart';
 import 'package:save_it/app/models/plaid.dart';
 
 class PlaidRepository {
@@ -66,6 +68,32 @@ class PlaidRepository {
       return accessToken;
     } else {
       return 'emptyAccess';
+    }
+  }
+
+  Future<Account> getTransaction(String accessToken) async {
+    // Initialize DateTime variables
+    DateFormat formatter = DateFormat('yyyy-MM-dd');
+    final oneMonthAgo =
+        formatter.format(DateTime.now().subtract(const Duration(days: 31)));
+    var currentDate = formatter.format(DateTime.now());
+
+    final response = await post(Uri.parse(RETRIEVE_TRANSACTIONS_URL),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, dynamic>{
+          "client_id": CLIENT_ID,
+          "secret": SECRET_KEY,
+          "access_token": accessToken,
+          "start_date": oneMonthAgo,
+          "end_date": currentDate,
+        }));
+    if (response.statusCode == 200) {
+      return accountFromJson(response.body);
+    } else {
+      print(response.body);
+      throw Exception('Failed to get Transactions!');
     }
   }
 }
