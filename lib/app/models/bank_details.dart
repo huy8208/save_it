@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 class Accounts {
   Accounts({
     required this.accounts,
@@ -185,15 +183,6 @@ class PaymentMeta {
     required this.referenceNumber,
   });
 
-  String? byOrderOf;
-  String? payee;
-  String? payer;
-  String? paymentMethod;
-  String? paymentProcessor;
-  String? ppdId;
-  String? reason;
-  String? referenceNumber;
-
   PaymentMeta.fromJson(Map<String, dynamic> json) {
     if (json['by_order_of'] == null) {
       byOrderOf = null;
@@ -243,6 +232,14 @@ class PaymentMeta {
       referenceNumber = json['reference_number'] as String;
     }
   }
+  String? byOrderOf;
+  String? payee;
+  String? payer;
+  String? paymentMethod;
+  String? paymentProcessor;
+  String? ppdId;
+  String? reason;
+  String? referenceNumber;
 }
 
 class Location {
@@ -256,15 +253,6 @@ class Location {
     required this.region,
     required this.storeNumber,
   });
-
-  String? address;
-  String? city;
-  String? country;
-  double? lat;
-  double? lon;
-  String? postalCode;
-  String? region;
-  String? storeNumber;
 
   Location.fromJson(Map<String, dynamic> json) {
     if (json['address'] == null) {
@@ -315,4 +303,13 @@ class Location {
       storeNumber = json['store_number'] as String;
     }
   }
+
+  String? address;
+  String? city;
+  String? country;
+  double? lat;
+  double? lon;
+  String? postalCode;
+  String? region;
+  String? storeNumber;
 }
