@@ -3,9 +3,14 @@ import 'package:save_it/app/services/providers/plaid.dart';
 
 class PlaidRepository {
   final PlaidProvider plaidProvider = PlaidProvider();
-  Future<LinkTokenConfiguration?> parsePlaidBankAccounts() async {
-    final LinkTokenConfiguration? linkTokenConfigure =
-        await plaidProvider.openPlaidOAth();
-    return linkTokenConfigure;
+  late LinkTokenConfiguration? linkTokenConfiguration;
+
+  Future<void> openPlaidAuthentication() async {
+    linkTokenConfiguration = await plaidProvider.openPlaidOAth();
+    if (linkTokenConfiguration != null) {
+      PlaidLink.open(configuration: linkTokenConfiguration!);
+    } else {
+      // add alert here
+    }
   }
 }

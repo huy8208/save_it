@@ -15,7 +15,7 @@ class HomePage extends GetView<HomeController> {
           RaisedButtonCustomWidget(
             icon: Icons.savings_rounded,
             onPressed: () {
-              controller.openPlaidAuthentication();
+              controller.callSomething();
             },
             text: 'hello',
           ),
