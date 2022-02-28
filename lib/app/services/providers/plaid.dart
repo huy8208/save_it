@@ -7,7 +7,7 @@ import 'package:save_it/app/core/utils/keys.dart';
 import 'package:save_it/app/models/bank_details.dart';
 import 'package:save_it/app/models/plaid.dart';
 
-class PlaidRepository {
+class PlaidProvider {
   Future<LinkToken> createLinkToken() async {
     final dynamic body = jsonEncode(<String, dynamic>{
       'client_id': CLIENT_ID,
@@ -28,25 +28,25 @@ class PlaidRepository {
       body: body,
     );
     if (response.statusCode == 200) {
-      // isLoading(false);
-      return LinkToken.fromJson(response.body as Map<String, dynamic>);
+      return LinkToken.fromJson(
+          json.decode(response.body) as Map<String, dynamic>);
     } else {
       return LinkToken(expiration: '', tokenURL: '', requestId: '');
     }
   }
 
   // Opening Plaid authentication
-  Future<Map<String, dynamic>> openPlaidOAth() async {
-    final LinkToken linkToken = await PlaidRepository().createLinkToken();
+  Future<LinkTokenConfiguration?> openPlaidOAth() async {
+    final LinkToken linkToken = await PlaidProvider().createLinkToken();
     if (linkToken.tokenURL != '') {
       final LinkTokenConfiguration linkTokenConfiguration =
           LinkTokenConfiguration(
         token: linkToken.tokenURL,
       );
 
-      return <String, dynamic>{'configuration': linkTokenConfiguration};
+      return linkTokenConfiguration;
     } else {
-      return <String, dynamic>{'configuration': ''};
+      return null;
     }
   }
 
@@ -71,29 +71,29 @@ class PlaidRepository {
     }
   }
 
-  Future<Account> getTransaction(String accessToken) async {
+  Future<Account?> getTransaction(String accessToken) async {
     // Initialize DateTime variables
-    DateFormat formatter = DateFormat('yyyy-MM-dd');
-    final oneMonthAgo =
+    final DateFormat formatter = DateFormat('yyyy-MM-dd');
+    final String oneMonthAgo =
         formatter.format(DateTime.now().subtract(const Duration(days: 31)));
-    var currentDate = formatter.format(DateTime.now());
+    final String currentDate = formatter.format(DateTime.now());
 
-    final response = await post(Uri.parse(RETRIEVE_TRANSACTIONS_URL),
+    final Response response = await post(Uri.parse(RETRIEVE_TRANSACTIONS_URL),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
         body: jsonEncode(<String, dynamic>{
-          "client_id": CLIENT_ID,
-          "secret": SECRET_KEY,
-          "access_token": accessToken,
-          "start_date": oneMonthAgo,
-          "end_date": currentDate,
+          'client_id': CLIENT_ID,
+          'secret': SECRET_KEY,
+          'access_token': accessToken,
+          'start_date': oneMonthAgo,
+          'end_date': currentDate,
         }));
     if (response.statusCode == 200) {
-      return accountFromJson(response.body);
+      return Account.fromJson(response.body as Map<String, dynamic>);
     } else {
-      print(response.body);
-      throw Exception('Failed to get Transactions!');
+      return null;
+      // throw Exception('Failed to get Transactions!');
     }
   }
 }

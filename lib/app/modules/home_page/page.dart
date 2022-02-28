@@ -8,24 +8,19 @@ class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     HomeBinding().dependencies();
-    return GetX<HomeController>(
-      builder: (HomeController controller) {
-        controller.something = Get.find<HomeController>().something;
-        return Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              RaisedButtonCustomWidget(
-                icon: Icons.savings_rounded,
-                onPressed: () {
-                  Get.toNamed('/sample_page');
-                },
-                text: controller.something,
-              ),
-            ],
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          RaisedButtonCustomWidget(
+            icon: Icons.savings_rounded,
+            onPressed: () {
+              controller.openPlaidAuthentication();
+            },
+            text: 'hello',
           ),
-        );
-      },
+        ],
+      ),
     );
   }
 }
