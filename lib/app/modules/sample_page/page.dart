@@ -8,7 +8,7 @@ import 'package:save_it/app/widgets/button_widget.dart';
 class SamplePage extends GetView<SampleController> {
   @override
   Widget build(BuildContext context) {
-    SamplePageBinding().dependencies();
+    // SamplePageBinding().dependencies();
     return Scaffold(
       body: GetX<SampleController>(
         builder: (SampleController controller) {

@@ -5,12 +5,12 @@ import 'package:save_it/app/services/repository/api_repository.dart';
 class SamplePageBinding implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<SampleController>(
-      () {
-        return SampleController(
-          repository: ApiRepository(),
-        );
-      },
-    );
+    // Get.lazyPut<SampleController>(
+    //   () {
+    //     return SampleController(
+    //       repository: ApiRepository(),
+    //     );
+    //   },
+    // );
   }
 }

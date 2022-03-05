@@ -5,8 +5,8 @@ import 'package:save_it/app/services/repository/plaid_repository.dart';
 class HomeBinding implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<HomeController>(
-      () => HomeController(plaidRepository: PlaidRepository()),
-    );
+    // Get.lazyPut<HomeController>(
+    //   () => HomeController(plaidRepository: PlaidRepository()),
+    // );
   }
 }

@@ -7,7 +7,7 @@ import 'package:save_it/app/widgets/button_widget.dart';
 class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
-    HomeBinding().dependencies();
+    // HomeBinding().dependencies();
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
