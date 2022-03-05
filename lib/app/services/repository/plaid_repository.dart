@@ -7,10 +7,20 @@ class PlaidRepository {
 
   Future<void> openPlaidAuthentication() async {
     linkTokenConfiguration = await plaidProvider.openPlaidOAth();
+    PlaidLink.onSuccess(_onSuccessCallback);
+    PlaidLink.onEvent(_onEventCallback);
+    PlaidLink.onExit(_onExitCallback);
+
     if (linkTokenConfiguration != null) {
       PlaidLink.open(configuration: linkTokenConfiguration!);
     } else {
       // add alert here
     }
   }
+
+  void _onSuccessCallback(String publicToken, LinkSuccessMetadata metadata) {}
+
+  void _onEventCallback(String eventName, LinkEventMetadata metadata) {}
+
+  void _onExitCallback(LinkError? error, LinkExitMetadata metadata) {}
 }
