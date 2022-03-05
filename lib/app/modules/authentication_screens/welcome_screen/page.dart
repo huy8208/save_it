@@ -33,14 +33,17 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 ),
                 AnimatedTextKit(
                   animatedTexts: [
-                    TyperAnimatedText(
+                    TypewriterAnimatedText(
                       'SaveIt',
                       textStyle: const TextStyle(
                         fontSize: 45.0,
                         fontWeight: FontWeight.w900,
                       ),
+                      speed: const Duration(milliseconds: 250),
                     ),
                   ],
+                  repeatForever: true,
+                  pause: const Duration(seconds: 2),
                 ),
                 Container(
                   height: 48,
