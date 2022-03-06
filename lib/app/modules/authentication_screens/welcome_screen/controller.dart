@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get.dart';
 
-class WelcomeScreenController extends GetxController {
+class WelcomeScreenController extends GetxController
+    with GetSingleTickerProviderStateMixin {
   WelcomeScreenController();
-  // AnimationController controller = AnimationController(vsync: );
+  late AnimationController animationController;
+  late Animation<Color?> animation;
 
+  @override
+  void onInit() {
+    animationController =
+        AnimationController(duration: const Duration(seconds: 1), vsync: this);
+    animation = ColorTween(begin: Colors.blueGrey.shade50, end: Colors.white)
+        .animate(animationController);
+  }
 }

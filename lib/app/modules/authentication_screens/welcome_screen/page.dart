@@ -9,13 +9,29 @@ class WelcomeScreen extends StatefulWidget {
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen>
-    with SingleTickerProviderStateMixin {
+class _WelcomeScreenState extends State<WelcomeScreen> {
+  WelcomeScreenController controller = Get.find<WelcomeScreenController>();
+
+  @override
+  void initState() {
+    super.initState();
+    controller.animationController.forward();
+    controller.animationController.addListener(() {
+      setState(() {});
+    });
+  }
+
+  @override
+  void dispose() {
+    controller.animationController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    WelcomeScreenController controller = Get.find<WelcomeScreenController>();
     return Scaffold(
+      backgroundColor: controller.animation.value,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -48,23 +64,45 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 Container(
                   height: 48,
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    Get.toNamed('/homepage');
-                  },
-                  child: const Text('Log In'),
+                const CustomElevatedButton(
+                  buttonName: 'Login',
+                  color: Colors.lightBlueAccent,
+                  getToPage: '/homepage',
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    Get.toNamed('/homepage');
-                  },
-                  child: const Text('Register'),
+                const CustomElevatedButton(
+                  buttonName: 'Register',
+                  color: Colors.lightBlueAccent,
+                  getToPage: '/sample_page',
                 )
               ],
             )
           ],
         ),
       ),
+    );
+  }
+}
+
+class CustomElevatedButton extends StatelessWidget {
+  const CustomElevatedButton({
+    Key? key,
+    required this.buttonName,
+    required this.color,
+    required this.getToPage,
+  }) : super(key: key);
+
+  final String buttonName;
+  final MaterialAccentColor color;
+  final String getToPage;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        Get.toNamed(getToPage);
+      },
+      style: ElevatedButton.styleFrom(primary: color),
+      child: Text(buttonName),
     );
   }
 }

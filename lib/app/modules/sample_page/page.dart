@@ -22,7 +22,7 @@ class SamplePage extends GetView<SampleController> {
                 RaisedButtonCustomWidget(
                   icon: Icons.savings_outlined,
                   onPressed: () {
-                    Get.back();
+                    Get.toNamed('/root');
                   },
                   text: controller.something,
                 ),

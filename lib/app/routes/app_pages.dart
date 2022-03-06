@@ -10,7 +10,7 @@ import 'package:save_it/app/modules/sample_page/page.dart';
 class AppPages {
   static final List<GetPage<dynamic>> pages = <GetPage<dynamic>>[
     GetPage<dynamic>(
-      name: '/',
+      name: '/homepage',
       page: () => HomePage(),
       binding: HomeBinding(),
     ),
