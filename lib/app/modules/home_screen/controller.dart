@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:plaid_flutter/plaid_flutter.dart';
-import 'package:save_it/app/modules/home_page/page.dart';
+import 'package:save_it/app/modules/home_screen/page.dart';
 import 'package:save_it/app/services/repository/plaid_repository.dart';
 
 class HomeController extends GetxController {

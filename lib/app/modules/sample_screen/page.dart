@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:save_it/app/modules/home_page/controller.dart';
-import 'package:save_it/app/modules/sample_page/binding.dart';
-import 'package:save_it/app/modules/sample_page/controller.dart';
+import 'package:save_it/app/modules/home_screen/controller.dart';
+import 'package:save_it/app/modules/sample_screen/binding.dart';
+import 'package:save_it/app/modules/sample_screen/controller.dart';
 import 'package:save_it/app/widgets/button_widget.dart';
 
-class SamplePage extends GetView<SampleController> {
+class SampleScreen extends GetView<SampleController> {
   @override
   Widget build(BuildContext context) {
     // SamplePageBinding().dependencies();

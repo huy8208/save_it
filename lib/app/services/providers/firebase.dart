@@ -25,15 +25,12 @@ class FireBaseProvider {
 
   Future<void> register(String email, String password) async {
     try {
-      currentUser = await _userCredentials
-          .createUserWithEmailAndPassword(
+      currentUser = await _userCredentials.createUserWithEmailAndPassword(
         email: email,
         password: password,
-      )
-          .then((UserCredential currentUser) {
-        successSnackBar("Register-in success!");
-        isAuthenticated.value = true;
-      });
+      );
+      successSnackBar('Register-in success!');
+      isAuthenticated.value = true;
     } on FirebaseAuthException catch (firebaseError) {
       errorSnackBar(firebaseError.toString());
       print(firebaseError.toString());

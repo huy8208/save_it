@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:save_it/app/modules/authentication_screens/welcome_screen/page.dart';
-import 'package:save_it/app/modules/home_page/page.dart';
-import 'package:save_it/app/modules/root_app/controller.dart';
-import 'package:save_it/app/modules/sample_page/page.dart';
+import 'package:save_it/app/modules/home_screen/page.dart';
+import 'package:save_it/app/modules/root_screen/controller.dart';
+import 'package:save_it/app/modules/sample_screen/page.dart';
 
-class RootPage extends GetView<RootController> {
+class RootScreen extends GetView<RootController> {
   // Building bottom tab bar for navigation between pages
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class RootPage extends GetView<RootController> {
             return CupertinoTabView(
               builder: (BuildContext context) {
                 return CupertinoPageScaffold(
-                  child: SamplePage(),
+                  child: SampleScreen(),
                 );
               },
             );

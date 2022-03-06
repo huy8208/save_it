@@ -1,28 +1,28 @@
 import 'package:get/get.dart';
 import 'package:save_it/app/core/middleware/middleware.dart';
-import 'package:save_it/app/modules/home_page/binding.dart';
-import 'package:save_it/app/modules/home_page/page.dart';
-import 'package:save_it/app/modules/root_app/binding.dart';
-import 'package:save_it/app/modules/root_app/page.dart';
-import 'package:save_it/app/modules/sample_page/binding.dart';
-import 'package:save_it/app/modules/sample_page/page.dart';
+import 'package:save_it/app/modules/home_screen/binding.dart';
+import 'package:save_it/app/modules/home_screen/page.dart';
+import 'package:save_it/app/modules/root_screen/binding.dart';
+import 'package:save_it/app/modules/root_screen/page.dart';
+import 'package:save_it/app/modules/sample_screen/binding.dart';
+import 'package:save_it/app/modules/sample_screen/page.dart';
 
 class AppPages {
   static final List<GetPage<dynamic>> pages = <GetPage<dynamic>>[
     GetPage<dynamic>(
       name: '/homepage',
-      page: () => HomePage(),
+      page: () => HomeScreen(),
       binding: HomeBinding(),
     ),
     GetPage<dynamic>(
       name: '/sample_page',
-      page: () => SamplePage(),
+      page: () => SampleScreen(),
       binding: SamplePageBinding(),
       middlewares: <GetMiddleware>[HomeMiddleware()],
     ),
     GetPage<dynamic>(
       name: '/root',
-      page: () => RootPage(),
+      page: () => RootScreen(),
       binding: RootBinding(),
     ),
   ];

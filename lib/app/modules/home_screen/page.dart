@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:save_it/app/modules/home_page/binding.dart';
-import 'package:save_it/app/modules/home_page/controller.dart';
+import 'package:save_it/app/modules/home_screen/binding.dart';
+import 'package:save_it/app/modules/home_screen/controller.dart';
 import 'package:save_it/app/widgets/button_widget.dart';
 
-class HomePage extends GetView<HomeController> {
+class HomeScreen extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     // HomeBinding().dependencies();

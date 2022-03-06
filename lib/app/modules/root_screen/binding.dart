@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 import 'package:save_it/app/modules/authentication_screens/welcome_screen/controller.dart';
-import 'package:save_it/app/modules/home_page/controller.dart';
-import 'package:save_it/app/modules/root_app/controller.dart';
-import 'package:save_it/app/modules/sample_page/controller.dart';
+import 'package:save_it/app/modules/home_screen/controller.dart';
+import 'package:save_it/app/modules/root_screen/controller.dart';
+import 'package:save_it/app/modules/sample_screen/controller.dart';
 import 'package:save_it/app/services/repository/api_repository.dart';
 import 'package:save_it/app/services/repository/plaid_repository.dart';
 

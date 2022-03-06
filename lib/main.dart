@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:save_it/app/bindings/global_binding.dart';
 import 'package:save_it/app/core/theme/app_theme.dart';
 import 'package:save_it/app/core/translations/app_translations.dart';
-import 'package:save_it/app/routes/app_pages.dart';
+import 'package:save_it/app/routes/routing_screens.dart';
 
 void main() {
   GlobalBinding().dependencies();
