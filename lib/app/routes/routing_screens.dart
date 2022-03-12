@@ -1,29 +1,37 @@
 import 'package:get/get.dart';
 import 'package:save_it/app/core/middleware/middleware.dart';
+import 'package:save_it/app/modules/authentication_screens/login_screen/binding.dart';
+import 'package:save_it/app/modules/authentication_screens/login_screen/page.dart';
+import 'package:save_it/app/modules/authentication_screens/welcome_screen/binding.dart';
+import 'package:save_it/app/modules/authentication_screens/welcome_screen/page.dart';
 import 'package:save_it/app/modules/home_screen/binding.dart';
 import 'package:save_it/app/modules/home_screen/page.dart';
-import 'package:save_it/app/modules/root_screen/binding.dart';
-import 'package:save_it/app/modules/root_screen/page.dart';
+
 import 'package:save_it/app/modules/sample_screen/binding.dart';
 import 'package:save_it/app/modules/sample_screen/page.dart';
 
 class AppPages {
   static final List<GetPage<dynamic>> pages = <GetPage<dynamic>>[
     GetPage<dynamic>(
-      name: '/homepage',
-      page: () => HomeScreen(),
-      binding: HomeBinding(),
+      name: '/login_screen',
+      page: () => LoginScreen(),
+      binding: LoginScreenBinding(),
     ),
     GetPage<dynamic>(
-      name: '/sample_page',
+      name: '/sample_screen',
       page: () => SampleScreen(),
       binding: SamplePageBinding(),
       middlewares: <GetMiddleware>[HomeMiddleware()],
     ),
     GetPage<dynamic>(
-      name: '/root',
-      page: () => RootScreen(),
-      binding: RootBinding(),
+      name: '/home_screen',
+      page: () => HomeScreen(),
+      binding: HomeScreenBinding(),
+    ),
+    GetPage<dynamic>(
+      name: '/welcome_screen',
+      page: () => WelcomeScreen(),
+      binding: WelcomeScreenBinding(),
     ),
   ];
 }

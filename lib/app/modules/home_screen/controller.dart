@@ -1,18 +1,17 @@
 import 'package:get/get.dart';
-import 'package:plaid_flutter/plaid_flutter.dart';
-import 'package:save_it/app/modules/home_screen/page.dart';
-import 'package:save_it/app/services/repository/plaid_repository.dart';
+import 'package:save_it/app/services/repository/api_repository.dart';
 
-class HomeController extends GetxController {
-  HomeController({required this.plaidRepository});
+class HomeScreenController extends GetxController {
+  HomeScreenController({required this.repository});
 
-  final RxString _someThing = 'HOME PAGE'.obs;
+  final RxString _someThing = 'ROOT PAGE'.obs;
   String get something => _someThing.value;
   set something(String value) => _someThing.value = value;
 
-  Future<void> callsomething() async {
-    plaidRepository.openPlaidAuthentication();
+  String doSomething() {
+    repository.getAll();
+    return 'Return Something';
   }
 
-  final PlaidRepository plaidRepository;
+  final ApiRepository repository;
 }

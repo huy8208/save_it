@@ -4,7 +4,7 @@ import 'package:save_it/app/services/repository/api_repository.dart';
 class SampleController extends GetxController {
   SampleController({required this.repository});
 
-  final RxString _someThing = 'DETAILS PAGE'.obs;
+  final RxString _someThing = 'sample text'.obs;
   String get something => _someThing.value;
   set something(String value) => _someThing.value = value;
 

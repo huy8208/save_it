@@ -67,12 +67,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 const CustomElevatedButton(
                   buttonName: 'Login',
                   color: Colors.lightBlueAccent,
-                  getToPage: '/homepage',
+                  getToPage: '/login_screen',
                 ),
                 const CustomElevatedButton(
                   buttonName: 'Register',
                   color: Colors.lightBlueAccent,
-                  getToPage: '/sample_page',
+                  getToPage: '/sample_screen',
                 )
               ],
             )
