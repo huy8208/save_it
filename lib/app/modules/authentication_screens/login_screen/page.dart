@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:save_it/app/core/theme/app_colors.dart';
@@ -80,9 +81,16 @@ class LoginScreen extends GetView<LoginScreenController> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Center(
-            child: Text(
-              'login'.tr,
-              style: AppTextStyle.titleStyle,
+            child: AnimatedTextKit(
+              animatedTexts: <TypewriterAnimatedText>[
+                TypewriterAnimatedText(
+                  'login'.tr,
+                  textStyle: AppTextStyle.titleStyle,
+                  speed: const Duration(milliseconds: 250),
+                ),
+              ],
+              repeatForever: true,
+              pause: const Duration(seconds: 5),
             ),
           ),
           const SizedBox(height: 26),

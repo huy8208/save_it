@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:save_it/app/core/theme/app_colors.dart';
@@ -30,7 +31,7 @@ class RegistrationScreen extends GetView<RegistrationScreenController> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             _buildImage(),
-            _buildLoginForm(),
+            _buildRegistrationForm(),
           ],
         ),
       ),
@@ -53,7 +54,7 @@ class RegistrationScreen extends GetView<RegistrationScreenController> {
     );
   }
 
-  Container _buildLoginForm() {
+  Container _buildRegistrationForm() {
     return Container(
       margin: const EdgeInsets.symmetric(
         vertical: 36.0,
@@ -80,9 +81,16 @@ class RegistrationScreen extends GetView<RegistrationScreenController> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Center(
-            child: Text(
-              'register'.tr,
-              style: AppTextStyle.titleStyle,
+            child: AnimatedTextKit(
+              animatedTexts: <TypewriterAnimatedText>[
+                TypewriterAnimatedText(
+                  'Register'.tr,
+                  textStyle: AppTextStyle.titleStyle,
+                  speed: const Duration(milliseconds: 250),
+                ),
+              ],
+              repeatForever: true,
+              pause: const Duration(seconds: 5),
             ),
           ),
           const SizedBox(height: 26),
