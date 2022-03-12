@@ -10,6 +10,7 @@ final Map<String, String> enUs = <String, String>{
   'rememberMe': 'Remember me',
   'forgotPassword?': 'Forgot Password ?',
   'login': 'Login',
+  'register': 'Register',
   'forgotPassword': 'Forgot Password',
   'send': 'Send',
   'forgotContent':

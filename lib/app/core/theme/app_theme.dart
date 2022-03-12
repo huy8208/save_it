@@ -1,8 +1,19 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:save_it/app/core/theme/app_colors.dart';
 import 'package:save_it/app/core/theme/app_int.dart';
 
 final ThemeData appThemeData = ThemeData(
+  appBarTheme: AppBarTheme(
+    systemOverlayStyle: SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarBrightness: Platform.isIOS ? Brightness.light : Brightness.dark,
+      statusBarIconBrightness:
+          Platform.isIOS ? Brightness.light : Brightness.dark,
+    ),
+  ),
   primaryColor: AppColors.primaryColor,
   colorScheme: ThemeData().colorScheme.copyWith(
         primary: AppColors.primaryColor,

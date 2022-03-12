@@ -4,10 +4,10 @@ import 'package:save_it/app/core/theme/app_colors.dart';
 import 'package:save_it/app/core/theme/app_images_urls.dart';
 import 'package:save_it/app/core/theme/app_int.dart';
 import 'package:save_it/app/core/theme/app_text_style.dart';
-import 'package:save_it/app/modules/authentication_screens/login_screen/controller.dart';
+import 'package:save_it/app/modules/authentication_screens/registration_screen/controller.dart';
 
-class LoginScreen extends GetView<LoginScreenController> {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegistrationScreen extends GetView<RegistrationScreenController> {
+  const RegistrationScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +81,7 @@ class LoginScreen extends GetView<LoginScreenController> {
         children: <Widget>[
           Center(
             child: Text(
-              'login'.tr,
+              'register'.tr,
               style: AppTextStyle.titleStyle,
             ),
           ),
@@ -114,54 +114,44 @@ class LoginScreen extends GetView<LoginScreenController> {
                         ? Icons.visibility_off
                         : Icons.visibility,
                   ),
-                  onPressed: () {
-                    controller.togglePassword();
-                  },
+                  onPressed: () {},
+                ),
+              ),
+              obscureText: controller.hidePassword.value,
+            ),
+          ),
+          const SizedBox(height: 26),
+          Text(
+            'password'.tr.toUpperCase(),
+            style: AppTextStyle.textTitleInput,
+          ),
+          const SizedBox(height: 10),
+          Obx(
+            () => TextField(
+              controller: controller.passwordInput,
+              decoration: InputDecoration(
+                hintText: 'confirmPassword'.tr,
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    controller.hidePassword.value
+                        ? Icons.visibility_off
+                        : Icons.visibility,
+                  ),
+                  onPressed: () {},
                 ),
               ),
               obscureText: controller.hidePassword.value,
             ),
           ),
           const SizedBox(height: AppInt.defaultPadding),
-          Row(
-            children: <Widget>[
-              SizedBox(
-                width: 28,
-                height: 28,
-                child: Transform.scale(
-                  scale: 1.5,
-                  child: Obx(
-                    () => Checkbox(
-                      value: controller.isCheckedRememberMe.value,
-                      onChanged: (bool? data) {
-                        controller.isCheckedRememberMe.value = data!;
-                      },
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(width: 10),
-              Text('rememberMe'.tr),
-              const Spacer(),
-              GestureDetector(
-                onTap: () {
-                  controller.handleForgotPassword();
-                },
-                child: Text(
-                  'forgotPassword?'.tr,
-                  style: AppTextStyle.textHavelink,
-                ),
-              ),
-            ],
-          ),
           const SizedBox(height: 26),
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                controller.handleClickLoginButton();
+                controller.handleRegisterButton();
               },
-              child: Text('login'.tr),
+              child: Text('Register'.tr),
             ),
           ),
           const SizedBox(height: 16),

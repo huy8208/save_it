@@ -21,4 +21,7 @@ class LoginScreenController extends GetxController {
   }
 
   void handleForgotPassword() {}
+  void backToWelcomeScreen() {
+    Get.back();
+  }
 }

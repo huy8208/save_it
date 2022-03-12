@@ -14,4 +14,12 @@ class WelcomeScreenController extends GetxController
     animation = ColorTween(begin: Colors.blueGrey.shade50, end: Colors.white)
         .animate(animationController);
   }
+
+  void handleLoginButton() {
+    Get.toNamed('/login_screen');
+  }
+
+  void handleRegisterButton() {
+    Get.toNamed('/registration_screen');
+  }
 }

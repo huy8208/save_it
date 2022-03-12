@@ -2,6 +2,8 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:save_it/app/core/theme/app_images_urls.dart';
+import 'package:save_it/app/core/theme/app_int.dart';
 import 'package:save_it/app/modules/authentication_screens/welcome_screen/controller.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -64,16 +66,21 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 Container(
                   height: 48,
                 ),
-                const CustomElevatedButton(
-                  buttonName: 'Login',
-                  color: Colors.lightBlueAccent,
-                  getToPage: '/login_screen',
+                SizedBox(
+                  child: OutlinedButton(
+                    onPressed: () {
+                      controller.handleLoginButton();
+                    },
+                    child: Text('login'.tr),
+                  ),
                 ),
-                const CustomElevatedButton(
-                  buttonName: 'Register',
-                  color: Colors.lightBlueAccent,
-                  getToPage: '/sample_screen',
-                )
+                const SizedBox(width: AppInt.defaultPadding),
+                ElevatedButton(
+                  onPressed: () {
+                    controller.handleRegisterButton();
+                  },
+                  child: Text('register'.tr),
+                ),
               ],
             )
           ],
@@ -81,28 +88,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       ),
     );
   }
-}
 
-class CustomElevatedButton extends StatelessWidget {
-  const CustomElevatedButton({
-    Key? key,
-    required this.buttonName,
-    required this.color,
-    required this.getToPage,
-  }) : super(key: key);
-
-  final String buttonName;
-  final MaterialAccentColor color;
-  final String getToPage;
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        Get.toNamed(getToPage);
-      },
-      style: ElevatedButton.styleFrom(primary: color),
-      child: Text(buttonName),
+  Expanded _buildImage() {
+    return Expanded(
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 60.0,
+            vertical: 40,
+          ),
+          child: Image.asset(
+            AppImage.logoImage,
+          ),
+        ),
+      ),
     );
   }
 }
