@@ -1,5 +1,8 @@
 final Map<String, String> enUs = <String, String>{
   'welcomeToSaveIt': 'Welcome to SaveIt',
+  'allUrFinances': 'Have all your finances in one place!',
+  'manageUrMoney': 'Manage your money and invest with just one tap!',
+  'reachUrGoal': 'Reach your financial goal within your first year!',
   'email': 'Email',
   'inputYourEmail': 'Input your email',
   'password': 'Password',

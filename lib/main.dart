@@ -10,7 +10,7 @@ void main() {
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/welcome_screen',
+      initialRoute: '/onboarding_screen',
       theme: appThemeData,
       defaultTransition: Transition.fade,
       getPages: AppPages.pages,

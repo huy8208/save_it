@@ -122,7 +122,7 @@ class RegistrationScreen extends GetView<RegistrationScreenController> {
           ),
           const SizedBox(height: 26),
           Text(
-            'password'.tr.toUpperCase(),
+            'confirmPassword'.tr.toUpperCase(),
             style: AppTextStyle.textTitleInput,
           ),
           const SizedBox(height: 10),

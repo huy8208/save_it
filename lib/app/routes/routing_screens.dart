@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 import 'package:save_it/app/core/middleware/middleware.dart';
 import 'package:save_it/app/modules/authentication_screens/login_screen/binding.dart';
 import 'package:save_it/app/modules/authentication_screens/login_screen/page.dart';
+import 'package:save_it/app/modules/authentication_screens/onboarding_screen/binding.dart';
+import 'package:save_it/app/modules/authentication_screens/onboarding_screen/page.dart';
 import 'package:save_it/app/modules/authentication_screens/registration_screen/binding.dart';
 import 'package:save_it/app/modules/authentication_screens/registration_screen/page.dart';
 import 'package:save_it/app/modules/authentication_screens/welcome_screen/binding.dart';
@@ -34,6 +36,11 @@ class AppPages {
       name: '/home_screen',
       page: () => HomeScreen(),
       binding: HomeScreenBinding(),
+    ),
+    GetPage<dynamic>(
+      name: '/onboarding_screen',
+      page: () => OnBoardingScreen(),
+      binding: OnboardingScreenBinding(),
     ),
     GetPage<dynamic>(
       name: '/welcome_screen',
