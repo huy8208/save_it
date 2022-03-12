@@ -14,7 +14,8 @@ void main() {
       theme: appThemeData,
       defaultTransition: Transition.fade,
       getPages: AppPages.pages,
-      locale: const Locale('vi', 'VN'),
+      locale: const Locale('en', 'US'),
+      fallbackLocale: const Locale('en', 'US'),
       translationsKeys: AppTranslation.translations,
     ),
   );
