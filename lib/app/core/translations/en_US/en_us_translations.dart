@@ -11,6 +11,7 @@ final Map<String, String> enUs = <String, String>{
   'forgotPassword?': 'Forgot Password ?',
   'login': 'Login',
   'register': 'Register',
+  'agreeTermAndPrivacy': 'I agree with Terms and Privacy',
   'forgotPassword': 'Forgot Password',
   'send': 'Send',
   'forgotContent':

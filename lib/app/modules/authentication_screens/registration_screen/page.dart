@@ -144,6 +144,25 @@ class RegistrationScreen extends GetView<RegistrationScreenController> {
             ),
           ),
           const SizedBox(height: AppInt.defaultPadding),
+          SizedBox(
+            height: 28,
+            child: Row(
+              children: <Widget>[
+                Transform.scale(
+                  scale: 1.5,
+                  child: Obx(
+                    () => Checkbox(
+                      value: controller.isCheckedTermAndConditions.value,
+                      onChanged: (bool? data) {
+                        controller.isCheckedTermAndConditions.value = data!;
+                      },
+                    ),
+                  ),
+                ),
+                Text('agreeTermAndPrivacy'.tr)
+              ],
+            ),
+          ),
           const SizedBox(height: 26),
           SizedBox(
             width: double.infinity,
