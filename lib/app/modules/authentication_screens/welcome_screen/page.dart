@@ -46,7 +46,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   tag: 'logo',
                   child: SizedBox(
                     height: 60.0,
-                    child: Image.asset(AppImage.allInOneFinance),
+                    child: Image.asset(AppImage.logoImage),
                   ),
                 ),
                 AnimatedTextKit(
