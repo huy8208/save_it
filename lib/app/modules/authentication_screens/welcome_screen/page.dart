@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:save_it/app/core/theme/app_images_urls.dart';
 import 'package:save_it/app/core/theme/app_int.dart';
+import 'package:save_it/app/core/theme/app_text_style.dart';
 import 'package:save_it/app/modules/authentication_screens/welcome_screen/controller.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -49,19 +50,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     child: Image.asset(AppImage.logoImage),
                   ),
                 ),
-                AnimatedTextKit(
-                  animatedTexts: [
-                    TypewriterAnimatedText(
-                      'SaveIt',
-                      textStyle: const TextStyle(
-                        fontSize: 45.0,
-                        fontWeight: FontWeight.w900,
-                      ),
-                      speed: const Duration(milliseconds: 250),
-                    ),
-                  ],
-                  repeatForever: true,
-                  pause: const Duration(seconds: 2),
+                const Text(
+                  'SaveIt',
+                  style: AppTextStyle.titleStyle,
                 ),
                 Container(
                   height: 48,
