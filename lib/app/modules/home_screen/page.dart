@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:save_it/app/modules/authentication_screens/welcome_screen/page.dart';
 import 'package:save_it/app/modules/home_screen/controller.dart';
-import 'package:save_it/app/modules/sample_screen/page.dart';
+import 'package:save_it/app/modules/profile_screen/page.dart';
 
 class HomeScreen extends GetView<HomeScreenController> {
   // Building bottom tab bar for navigation between pages
@@ -25,14 +25,14 @@ class HomeScreen extends GetView<HomeScreenController> {
             ],
           ),
         ),
-        body: const TabBarView(
-          physics: NeverScrollableScrollPhysics(),
+        body: TabBarView(
+          physics: const NeverScrollableScrollPhysics(),
           children: <Widget>[
-            Center(child: Text('1')),
-            Center(child: Text('2')),
-            Center(child: Text('3')),
-            Center(child: Text('4')),
-            Center(child: Text('5'))
+            const Center(child: Text('1')),
+            const Center(child: Text('2')),
+            const Center(child: Text('3')),
+            const Center(child: Text('4')),
+            ProfileScreen(),
           ],
         ),
       ),

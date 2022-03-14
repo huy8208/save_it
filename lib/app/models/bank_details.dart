@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 class Accounts {
   Accounts({
     required this.accounts,
@@ -312,4 +314,19 @@ class Location {
   String? postalCode;
   String? region;
   String? storeNumber;
+}
+
+class FICOscore {
+  FICOscore({
+    required this.ficoScore,
+    required this.name,
+    required this.email,
+    required this.imageUrl,
+    required this.id,
+  });
+  late double ficoScore;
+  late String name;
+  late String email;
+  late String imageUrl;
+  late int id;
 }
