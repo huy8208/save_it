@@ -16,7 +16,7 @@ class LoginScreenController extends GetxController {
 
   Future<void> handleClickLoginButton(String email, String password) async {
     final String login = await fireBaseForLogin.signIn(email, password);
-    if (login == 'FirebaseAuthException caughted') {
+    if (login == 'FirebaseAuthException caughted: Login failed') {
       print('login failed');
     } else if (login == 'loginedSuccessful') {
       isAuthenticated.value = true;

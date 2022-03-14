@@ -13,29 +13,28 @@ class FireBaseProvider {
   Future<String> signIn(String email, String password) async {
     try {
       currentUser = await _userCredentials.signInWithCredential(
-          EmailAuthProvider.credential(email: email, password: password));
+        EmailAuthProvider.credential(email: email, password: password),
+      );
       successSnackBar('Sign-in success!');
       // isAuthenticated.value = true;
       return 'loginedSuccessful';
     } on FirebaseAuthException catch (firebaseError) {
       errorSnackBar(firebaseError.toString());
-      return 'FirebaseAuthException caughted';
+      return 'FirebaseAuthException caughted: Login failed';
     }
   }
 
-  Future<void> register(String email, String password) async {
+  Future<String> register(String email, String password) async {
     try {
       currentUser = await _userCredentials.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
-      successSnackBar('Register-in success!');
-      // isAuthenticated.value = true;
+      successSnackBar('Register success!');
+      return 'RegistedSuccessful';
     } on FirebaseAuthException catch (firebaseError) {
       errorSnackBar(firebaseError.toString());
-      print(firebaseError.toString());
-    } catch (e) {
-      print(e.toString());
+      return 'FirebaseAuthException caughted: Registration failed';
     }
   }
 

@@ -122,7 +122,9 @@ class RegistrationScreen extends GetView<RegistrationScreenController> {
                         ? Icons.visibility_off
                         : Icons.visibility,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.togglePassword();
+                  },
                 ),
               ),
               obscureText: controller.hidePassword.value,
@@ -136,7 +138,7 @@ class RegistrationScreen extends GetView<RegistrationScreenController> {
           const SizedBox(height: 10),
           Obx(
             () => TextField(
-              controller: controller.passwordInput,
+              controller: controller.confirmPasswordInput,
               decoration: InputDecoration(
                 hintText: 'confirmPassword'.tr,
                 suffixIcon: IconButton(
@@ -145,7 +147,9 @@ class RegistrationScreen extends GetView<RegistrationScreenController> {
                         ? Icons.visibility_off
                         : Icons.visibility,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.togglePassword();
+                  },
                 ),
               ),
               obscureText: controller.hidePassword.value,
@@ -176,7 +180,10 @@ class RegistrationScreen extends GetView<RegistrationScreenController> {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                controller.handleRegisterButton();
+                controller.handleRegistrationAction(
+                  controller.emailInput.text,
+                  controller.passwordInput.text,
+                );
               },
               child: Text('Register'.tr),
             ),

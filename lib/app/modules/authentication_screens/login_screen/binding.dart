@@ -6,6 +6,7 @@ class LoginScreenBinding implements Bindings {
   @override
   void dependencies() {
     Get.lazyPut<LoginScreenController>(
-        () => LoginScreenController(fireBaseForLogin: FireBaseProvider()));
+      () => LoginScreenController(fireBaseForLogin: FireBaseProvider()),
+    );
   }
 }
