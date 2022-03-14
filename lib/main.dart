@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:save_it/app/bindings/global_binding.dart';
@@ -5,8 +6,10 @@ import 'package:save_it/app/core/theme/app_theme.dart';
 import 'package:save_it/app/core/translations/app_translations.dart';
 import 'package:save_it/app/routes/routing_screens.dart';
 
-void main() {
+Future<void> main() async {
   GlobalBinding().dependencies();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,

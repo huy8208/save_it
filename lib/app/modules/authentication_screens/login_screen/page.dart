@@ -167,7 +167,10 @@ class LoginScreen extends GetView<LoginScreenController> {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                controller.handleClickLoginButton();
+                controller.handleClickLoginButton(
+                  controller.emailInput.text,
+                  controller.passwordInput.text,
+                );
               },
               child: Text('login'.tr),
             ),
