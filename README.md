@@ -6,35 +6,44 @@
 ![Simulator Screen Shot - iPhone 13 - 2022-03-15 at 00 44 05](https://user-images.githubusercontent.com/43127420/158330097-c3991e82-54b5-4d32-a15c-f52355e1a58a.png)
 
 # SaveIt
+
 We are currently developing an "all-in-one" fintech money management app that assists users in achieving their financial goals through simplified language and interface.
 
 ## Why did we create this app?
-We think that most applications on the market are heavily leaning towards financial terms with complicated UI. That is why we want to develop a convenient platform that assists users in tracking their finances through centralized views, interactive features, and goal visualization. 
+
+We think that most applications on the market are heavily leaning towards financial terms with complicated UI. That is why we want to develop a convenient platform that assists users in tracking their finances through centralized views, interactive features, and goal visualization.
 
 - Features in development: Incomes and Expense tracking through multiple banks, budgets and credit cards management, goal visualization.
 - Upcoming features: Finances News, Stock Tickers tracking, Trending financial indicators.
 - Target audience: GenX and Millenials
 
-## Technology
+## Technologies
+
 - Framework: Flutter
 - Database: Firestore
 - Service Provider: Plaid
 
 ## Requirements
+
 - Flutter(https://docs.flutter.dev/) installed.
+
 ## Getting Started
+
 1. Clone the repo.
+
 ```console
 git clone https://github.com/huy8208/save_it.git
 cd save_it
 ```
+
 2. Open Simulator
 
 ```console
 open -a Simulator
 ```
+
 3. Run with flutter
+
 ```console
 flutter run
 ```
-
