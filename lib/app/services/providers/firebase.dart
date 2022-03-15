@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/state_manager.dart';
@@ -7,42 +9,39 @@ import 'package:save_it/app/core/utils/snackBarSuccess.dart';
 class FireBaseProvider {
   static final FirebaseAuth _userCredentials = FirebaseAuth.instance;
   late UserCredential currentUser;
-  RxBool isAuthenticated = false.obs;
 
-  Future<void> signIn(String email, String password) async {
+  Future<String> signIn(String email, String password) async {
     try {
       currentUser = await _userCredentials.signInWithCredential(
-          EmailAuthProvider.credential(email: email, password: password));
+        EmailAuthProvider.credential(email: email, password: password),
+      );
       successSnackBar('Sign-in success!');
-      isAuthenticated.value = true;
+      // isAuthenticated.value = true;
+      return 'loginedSuccessful';
     } on FirebaseAuthException catch (firebaseError) {
       errorSnackBar(firebaseError.toString());
-      print(firebaseError.toString());
-    } catch (e) {
-      print(e.toString());
+      return 'FirebaseAuthException caughted: Login failed';
     }
   }
 
-  Future<void> register(String email, String password) async {
+  Future<String> register(String email, String password) async {
     try {
       currentUser = await _userCredentials.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
-      successSnackBar('Register-in success!');
-      isAuthenticated.value = true;
+      successSnackBar('Register success!');
+      return 'RegistedSuccessful';
     } on FirebaseAuthException catch (firebaseError) {
       errorSnackBar(firebaseError.toString());
-      print(firebaseError.toString());
-    } catch (e) {
-      print(e.toString());
+      return 'FirebaseAuthException caughted: Registration failed';
     }
   }
 
   Future<void> signOut() async {
     try {
       await _userCredentials.signOut();
-      isAuthenticated.value = false;
+      // isAuthenticated.value = false;
       //restart the app
       // Restart.restartApp();
     } on FirebaseAuthException catch (firebaseError) {
