@@ -13,7 +13,7 @@ Future<void> main() async {
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/onboarding_screen',
+      initialRoute: '/home_screen',
       theme: appThemeData,
       defaultTransition: Transition.fade,
       getPages: AppPages.pages,

@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:save_it/app/core/theme/app_colors.dart';
+import 'package:save_it/app/core/theme/app_int.dart';
+import 'package:save_it/app/core/theme/app_text_style.dart';
 import 'package:save_it/app/modules/authentication_screens/welcome_screen/page.dart';
 import 'package:save_it/app/modules/home_screen/controller.dart';
 import 'package:save_it/app/modules/profile_screen/page.dart';
@@ -28,7 +31,7 @@ class HomeScreen extends GetView<HomeScreenController> {
         body: TabBarView(
           physics: const NeverScrollableScrollPhysics(),
           children: <Widget>[
-            const Center(child: Text('1')),
+            HomeScreenUI(),
             const Center(child: Text('2')),
             const Center(child: Text('3')),
             const Center(child: Text('4')),
@@ -50,5 +53,63 @@ class HomeScreen extends GetView<HomeScreenController> {
         bottom: 4,
       ),
     );
+  }
+}
+
+class HomeScreenUI extends StatelessWidget {
+  const HomeScreenUI({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppColors.bgColor,
+      appBar: AppBar(
+        elevation: 0,
+        title: const Text(
+          'Home',
+          style: AppTextStyle.size20BlackBold,
+        ),
+        backgroundColor: AppColors.white,
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: AppInt.defaultPadding),
+            child: IconButton(
+              icon: const Icon(
+                Icons.notifications_none_rounded,
+                size: 30,
+                color: AppColors.dark,
+              ),
+              onPressed: () {},
+            ),
+          )
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            _buildIncomeAndSpending(),
+            const SizedBox(height: AppInt.defaultPadding),
+            _buildChart(),
+            const SizedBox(height: AppInt.defaultPadding),
+            _buildHighlights(),
+            const SizedBox(height: AppInt.defaultPadding),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container _buildIncomeAndSpending() {
+    return Container();
+  }
+
+  Container _buildChart() {
+    return Container();
+  }
+
+  Container _buildHighlights() {
+    return Container();
   }
 }

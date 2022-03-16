@@ -23,10 +23,10 @@ class ProfileScreen extends GetView<ProfileScreenController> {
           Padding(
             padding: const EdgeInsets.only(right: AppInt.defaultPadding),
             child: IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.logout_outlined,
                 size: 30,
-                color: AppColors.dark.withOpacity(0.5),
+                color: AppColors.dark,
               ),
               onPressed: () {
                 controller.handleSignOutAction();
