@@ -8,7 +8,7 @@ import 'package:save_it/app/services/providers/firebase.dart';
 class ProfileScreenController extends GetxController {
   final FICOscore dummyData = FICOscore(
     ficoScore: 12344.67,
-    name: 'DummyNguyen',
+    name: 'DooDoo Nguyen',
     email: 'dummy@gmail.com',
     imageUrl:
         'https://images.squarespace-cdn.com/content/v1/5c889234c2ff61063923c0e4/1554949695597-S0KNCJ7CHC0JBXX1LRPE/mother-child-asdina.jpg',
