@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:save_it/app/core/theme/app_colors.dart';
+import 'package:save_it/app/core/theme/app_currency.dart';
 import 'package:save_it/app/core/theme/app_int.dart';
 import 'package:save_it/app/core/theme/app_text_style.dart';
 import 'package:save_it/app/modules/authentication_screens/welcome_screen/page.dart';
@@ -89,7 +90,7 @@ class HomeScreenUI extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            _buildIncomeAndSpending(),
+            _buildIncomeAndSpending('month', 3000.12),
             const SizedBox(height: AppInt.defaultPadding),
             _buildChart(),
             const SizedBox(height: AppInt.defaultPadding),
@@ -101,8 +102,34 @@ class HomeScreenUI extends StatelessWidget {
     );
   }
 
-  Container _buildIncomeAndSpending() {
-    return Container();
+  Container _buildIncomeAndSpending(String period, double amount) {
+    return Container(
+      height: 140,
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      margin: const EdgeInsets.symmetric(
+          vertical: AppInt.defaultPadding, horizontal: AppInt.defaultPadding),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30), color: AppColors.white),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text(
+            'This $period spends',
+            style: AppTextStyle.size16DarkBold,
+          ),
+          const SizedBox(height: AppInt.defaultPadding),
+          Text(
+            '\$${AppCurrency.USdollar.format(amount)}',
+            style: const TextStyle(
+              fontWeight: FontWeight.w700,
+              fontSize: 45,
+              color: AppColors.black,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   Container _buildChart() {
