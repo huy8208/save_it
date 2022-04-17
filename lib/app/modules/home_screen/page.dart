@@ -9,6 +9,7 @@ import 'package:save_it/app/core/theme/app_text_style.dart';
 import 'package:save_it/app/modules/authentication_screens/welcome_screen/page.dart';
 import 'package:save_it/app/modules/home_screen/controller.dart';
 import 'package:save_it/app/modules/profile_screen/page.dart';
+import 'package:save_it/app/widgets/spendingChart.dart';
 
 class HomeScreen extends GetView<HomeScreenController> {
   // Building bottom tab bar for navigation between pages
@@ -91,8 +92,7 @@ class HomeScreenUI extends StatelessWidget {
         child: Column(
           children: <Widget>[
             _buildIncomeAndSpending('month', 3000.12),
-            const SizedBox(height: AppInt.defaultPadding),
-            _buildChart(),
+            SpendingChart(dates: <String, int>{'Monday': 1}),
             const SizedBox(height: AppInt.defaultPadding),
             _buildHighlights(),
             const SizedBox(height: AppInt.defaultPadding),
@@ -130,10 +130,6 @@ class HomeScreenUI extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  Container _buildChart() {
-    return Container();
   }
 
   Container _buildHighlights() {
