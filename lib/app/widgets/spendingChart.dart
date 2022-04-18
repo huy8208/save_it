@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:save_it/app/core/theme/app_colors.dart';
 import 'package:save_it/app/core/theme/app_int.dart';
+import 'package:save_it/app/core/theme/app_text_style.dart';
 
 class SpendingChart extends StatefulWidget {
   const SpendingChart({
@@ -26,6 +27,9 @@ class _SpendingChartState extends State<SpendingChart> {
       'Sat': 600,
       'Sun': 700
     };
+
+    List<String> period = ['This week', 'This month', 'This year'];
+
     return Container(
       height: 200,
       width: 400,
@@ -45,8 +49,13 @@ class _SpendingChartState extends State<SpendingChart> {
                 style: TextStyle(color: AppColors.white),
               ),
               DropdownButton<String>(
-                items: <String>['This Week', 'This Month', 'This Year']
-                    .map<DropdownMenuItem<String>>((String value) {
+                value: period[0],
+                style: const TextStyle(color: AppColors.white),
+                underline: Container(
+                  height: 2,
+                  color: AppColors.white,
+                ),
+                items: period.map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
                     child: Text(value),
@@ -120,8 +129,8 @@ class _DateState extends State<Date> {
       children: [
         Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30), color: AppColors.canary),
-          height: 80,
+              borderRadius: BorderRadius.circular(40), color: AppColors.canary),
+          height: 60,
           width: 10,
         ),
         Text(
