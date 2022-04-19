@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:save_it/app/bindings/global_binding.dart';
 import 'package:save_it/app/core/theme/app_theme.dart';
 import 'package:save_it/app/core/translations/app_translations.dart';
-import 'package:save_it/app/routes/routing_screens.dart';
+import 'package:save_it/app/routes/app_pages.dart';
 
 Future<void> main() async {
   GlobalBinding().dependencies();
@@ -13,7 +13,7 @@ Future<void> main() async {
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/onboarding_screen',
+      initialRoute: AppRoutes.ONBOARDING_SCREEN,
       theme: appThemeData,
       defaultTransition: Transition.fade,
       getPages: AppPages.pages,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:save_it/app/routes/app_pages.dart';
 
 class WelcomeScreenController extends GetxController
     with GetSingleTickerProviderStateMixin {
@@ -16,10 +17,10 @@ class WelcomeScreenController extends GetxController
   }
 
   void handleLoginButton() {
-    Get.toNamed('/login_screen');
+    Get.toNamed(AppRoutes.LOGIN_SCREEN);
   }
 
   void handleRegisterButton() {
-    Get.toNamed('/registration_screen');
+    Get.toNamed(AppRoutes.REGISTRATION_SCREEN);
   }
 }

@@ -18,3 +18,6 @@ const String SEARCH_INSTITUTION_BY_ID =
 // const String
 const String RETRIEVE_TRANSACTIONS_URL_DEV =
     'https://development.plaid.com/transactions/get';
+
+// NewsAPI
+const String NEWS_API = '513d9bcf76804c11ba4bfca71ca3e12b';

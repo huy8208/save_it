@@ -9,6 +9,7 @@ import 'package:save_it/app/core/theme/app_text_style.dart';
 import 'package:save_it/app/modules/home_screen/controller.dart';
 import 'package:save_it/app/modules/profile_screen/page.dart';
 import 'package:save_it/app/widgets/spendingChart.dart';
+import 'package:news_api_flutter_package/news_api_flutter_package.dart';
 
 class HomeScreen extends GetView<HomeScreenController> {
   // Building bottom tab bar for navigation between pages

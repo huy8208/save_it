@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:news_api_flutter_package/news_api_flutter_package.dart';
 import 'package:save_it/app/modules/authentication_screens/login_screen/controller.dart';
 import 'package:save_it/app/modules/authentication_screens/welcome_screen/controller.dart';
 import 'package:save_it/app/modules/home_screen/controller.dart';
@@ -7,6 +9,7 @@ import 'package:save_it/app/modules/sample_screen/controller.dart';
 import 'package:save_it/app/services/repository/api_repository.dart';
 import 'package:save_it/app/services/repository/plaid_repository.dart';
 import 'package:save_it/app/widgets/spendingChart.dart';
+import 'package:save_it/app/core/utils/keys.dart';
 
 class HomeScreenBinding implements Bindings {
   @override
@@ -14,12 +17,12 @@ class HomeScreenBinding implements Bindings {
     Get.lazyPut<HomeScreenController>(
       () => HomeScreenController(
         repository: ApiRepository(),
+        grabNewsAPI: NewsAPI(NEWS_API),
       ),
     );
     Get.lazyPut<SampleController>(
       () => SampleController(repository: ApiRepository()),
     );
-    Get.lazyPut<WelcomeScreenController>(() => WelcomeScreenController());
     Get.lazyPut<ProfileScreenController>(() => ProfileScreenController());
     Get.lazyPut<SpendingChartController>(() => SpendingChartController());
   }

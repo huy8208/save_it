@@ -1,10 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:news_api_flutter_package/news_api_flutter_package.dart';
+import 'package:save_it/app/routes/app_pages.dart';
 import 'package:save_it/app/services/providers/firebase.dart';
 
 class LoginScreenController extends GetxController {
-  LoginScreenController({required this.fireBaseForLogin});
+  LoginScreenController({
+    required this.fireBaseForLogin,
+  });
 
   final RxBool isCheckedRememberMe = false.obs;
   final RxBool hidePassword = true.obs;
@@ -20,7 +24,7 @@ class LoginScreenController extends GetxController {
       print('login failed');
     } else if (login == 'loginedSuccessful') {
       isAuthenticated.value = true;
-      Get.offAndToNamed('/home_screen');
+      Get.offAndToNamed(AppRoutes.HOME_SCREEN);
     }
   }
 

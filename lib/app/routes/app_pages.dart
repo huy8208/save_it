@@ -14,16 +14,18 @@ import 'package:save_it/app/modules/home_screen/page.dart';
 import 'package:save_it/app/modules/sample_screen/binding.dart';
 import 'package:save_it/app/modules/sample_screen/page.dart';
 
+part './app_routes.dart';
+
 class AppPages {
   static final List<GetPage<dynamic>> pages = <GetPage<dynamic>>[
     GetPage<dynamic>(
-      name: '/login_screen',
-      page: () => LoginScreen(),
+      name: AppRoutes.LOGIN_SCREEN,
+      page: () => const LoginScreen(),
       binding: LoginScreenBinding(),
     ),
     GetPage<dynamic>(
-      name: '/registration_screen',
-      page: () => RegistrationScreen(),
+      name: AppRoutes.REGISTRATION_SCREEN,
+      page: () => const RegistrationScreen(),
       binding: RegistrationScreenBinding(),
     ),
     GetPage<dynamic>(
@@ -33,17 +35,17 @@ class AppPages {
       middlewares: <GetMiddleware>[HomeMiddleware()],
     ),
     GetPage<dynamic>(
-      name: '/home_screen',
+      name: AppRoutes.HOME_SCREEN,
       page: () => HomeScreen(),
       binding: HomeScreenBinding(),
     ),
     GetPage<dynamic>(
-      name: '/onboarding_screen',
+      name: AppRoutes.ONBOARDING_SCREEN,
       page: () => OnBoardingScreen(),
       binding: OnboardingScreenBinding(),
     ),
     GetPage<dynamic>(
-      name: '/welcome_screen',
+      name: AppRoutes.WELCOME_SCREEN,
       page: () => WelcomeScreen(),
       binding: WelcomeScreenBinding(),
     ),
