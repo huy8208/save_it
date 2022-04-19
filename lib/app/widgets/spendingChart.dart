@@ -1,35 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:save_it/app/core/theme/app_colors.dart';
 import 'package:save_it/app/core/theme/app_int.dart';
-import 'package:save_it/app/core/theme/app_text_style.dart';
 
-class SpendingChart extends StatefulWidget {
-  const SpendingChart({
-    Key? key,
-    required this.dates,
-  }) : super(key: key);
-
-  final Map<String, int> dates;
-
-  @override
-  State<SpendingChart> createState() => _SpendingChartState();
+class SpendingChartController extends GetxController {
+  final RxMap<String, int> dates = {
+    'Mon': 100,
+    'Tue': 200,
+    'Wed': 300,
+    'Thu': 400,
+    'Fri': 500,
+    'Sat': 600,
+    'Sun': 700
+  }.obs;
+  RxList<String> period = ['This week', 'This month', 'This year'].obs;
 }
 
-class _SpendingChartState extends State<SpendingChart> {
+class SpendingChartUI extends GetView<SpendingChartController> {
   @override
   Widget build(BuildContext context) {
-    Map<String, int> dates = {
-      'Mon': 100,
-      'Tue': 200,
-      'Wed': 300,
-      'Thu': 400,
-      'Fri': 500,
-      'Sat': 600,
-      'Sun': 700
-    };
-
-    List<String> period = ['This week', 'This month', 'This year'];
-
     return Container(
       height: 200,
       width: 400,
@@ -48,20 +37,24 @@ class _SpendingChartState extends State<SpendingChart> {
                 'Analytics',
                 style: TextStyle(color: AppColors.white),
               ),
-              DropdownButton<String>(
-                value: period[0],
-                style: const TextStyle(color: AppColors.white),
-                underline: Container(
-                  height: 2,
-                  color: AppColors.white,
+              Obx(
+                () => DropdownButton<String>(
+                  value: controller.period[0],
+                  dropdownColor: AppColors.black,
+                  style: const TextStyle(color: AppColors.canary),
+                  underline: Container(
+                    height: 2,
+                    color: AppColors.white,
+                  ),
+                  items: controller.period
+                      .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue) {},
                 ),
-                items: period.map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-                onChanged: (String? newValue) {},
               ),
             ],
           ),
@@ -71,73 +64,46 @@ class _SpendingChartState extends State<SpendingChart> {
             endIndent: 10,
             thickness: 0.5,
           ),
-          Dates()
+          dates()
         ],
       ),
     );
   }
 }
 
-class Dates extends StatefulWidget {
-  const Dates({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  State<Dates> createState() => _DatesState();
-}
-
-class _DatesState extends State<Dates> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      width: double.infinity,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Date(value: 'Mon'),
-          Date(value: 'Tue'),
-          Date(value: 'Wed'),
-          Date(value: 'Thu'),
-          Date(value: 'Fri'),
-          Date(value: 'Sat'),
-          Date(value: 'Sun'),
-        ],
-      ),
-    );
-  }
-}
-
-class Date extends StatefulWidget {
-  Date({
-    Key? key,
-    required this.value,
-  }) : super(key: key);
-
-  String value;
-
-  @override
-  State<Date> createState() => _DateState();
-}
-
-class _DateState extends State<Date> {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
+Container dates() {
+  return Container(
+    height: 100,
+    width: double.infinity,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Container(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(40), color: AppColors.canary),
-          height: 60,
-          width: 10,
-        ),
-        Text(
-          widget.value,
-          style: const TextStyle(color: AppColors.white),
-        ),
+        date('Mon'),
+        date('Tue'),
+        date('Wed'),
+        date('Thu'),
+        date('Fri'),
+        date('Sat'),
+        date('Sun'),
       ],
-    );
-  }
+    ),
+  );
+}
+
+Column date(String value) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.end,
+    children: [
+      Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(40), color: AppColors.canary),
+        height: 60,
+        width: 10,
+      ),
+      Text(
+        value,
+        style: const TextStyle(color: AppColors.white),
+      ),
+    ],
+  );
 }

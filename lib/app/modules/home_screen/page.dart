@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_custom_carousel_slider/flutter_custom_carousel_slider.dart';
 import 'package:get/get.dart';
 import 'package:save_it/app/core/theme/app_colors.dart';
 import 'package:save_it/app/core/theme/app_currency.dart';
 import 'package:save_it/app/core/theme/app_int.dart';
 import 'package:save_it/app/core/theme/app_text_style.dart';
-import 'package:save_it/app/modules/authentication_screens/welcome_screen/page.dart';
 import 'package:save_it/app/modules/home_screen/controller.dart';
 import 'package:save_it/app/modules/profile_screen/page.dart';
 import 'package:save_it/app/widgets/spendingChart.dart';
@@ -33,7 +32,7 @@ class HomeScreen extends GetView<HomeScreenController> {
         body: TabBarView(
           physics: const NeverScrollableScrollPhysics(),
           children: <Widget>[
-            HomeScreenUI(),
+            _buildHomeScreenUI(),
             const Center(child: Text('2')),
             const Center(child: Text('3')),
             const Center(child: Text('4')),
@@ -56,15 +55,8 @@ class HomeScreen extends GetView<HomeScreenController> {
       ),
     );
   }
-}
 
-class HomeScreenUI extends StatelessWidget {
-  const HomeScreenUI({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
+  Widget _buildHomeScreenUI() {
     return Scaffold(
       backgroundColor: AppColors.bgColor,
       appBar: AppBar(
@@ -92,9 +84,9 @@ class HomeScreenUI extends StatelessWidget {
         child: Column(
           children: <Widget>[
             _buildIncomeAndSpending('month', 3000.12),
-            SpendingChart(dates: <String, int>{'Monday': 1}),
+            SpendingChartUI(),
             const SizedBox(height: AppInt.defaultPadding),
-            _buildHighlights(),
+            _buildNewsSider(),
             const SizedBox(height: AppInt.defaultPadding),
           ],
         ),
@@ -132,7 +124,20 @@ class HomeScreenUI extends StatelessWidget {
     );
   }
 
-  Container _buildHighlights() {
-    return Container();
+  Widget _buildNewsSider() {
+    return Center(
+      child: Column(
+        children: [
+          const Text('Top Stories'),
+          CustomCarouselSlider(
+            items: controller.itemList,
+            height: 150,
+            subHeight: 50,
+            width: Get.width * .9,
+            autoplay: false,
+          ),
+        ],
+      ),
+    );
   }
 }
