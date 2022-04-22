@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:save_it/app/core/utils/snackBarError.dart';
+import 'package:save_it/app/routes/app_pages.dart';
 import 'package:save_it/app/services/providers/firebase.dart';
 
 class RegistrationScreenController extends GetxController {
@@ -19,7 +20,7 @@ class RegistrationScreenController extends GetxController {
     if (registration == 'FirebaseAuthException caughted: Registration failed') {
       print('Registration failed!');
     } else {
-      Get.offAndToNamed('/home_screen');
+      Get.offAndToNamed(AppRoutes.MAIN_SCREEN);
     }
   }
 

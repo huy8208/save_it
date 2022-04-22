@@ -10,6 +10,8 @@ import 'package:save_it/app/modules/authentication_screens/welcome_screen/bindin
 import 'package:save_it/app/modules/authentication_screens/welcome_screen/page.dart';
 import 'package:save_it/app/modules/home_screen/binding.dart';
 import 'package:save_it/app/modules/home_screen/page.dart';
+import 'package:save_it/app/modules/main/binding.dart';
+import 'package:save_it/app/modules/main/page.dart';
 
 import 'package:save_it/app/modules/sample_screen/binding.dart';
 import 'package:save_it/app/modules/sample_screen/page.dart';
@@ -35,9 +37,9 @@ class AppPages {
       middlewares: <GetMiddleware>[HomeMiddleware()],
     ),
     GetPage<dynamic>(
-      name: AppRoutes.HOME_SCREEN,
-      page: () => HomeScreen(),
-      binding: HomeScreenBinding(),
+      name: AppRoutes.MAIN_SCREEN,
+      page: () => MainScreen(),
+      binding: MainScreenBinding(),
     ),
     GetPage<dynamic>(
       name: AppRoutes.ONBOARDING_SCREEN,
@@ -48,6 +50,11 @@ class AppPages {
       name: AppRoutes.WELCOME_SCREEN,
       page: () => WelcomeScreen(),
       binding: WelcomeScreenBinding(),
+    ),
+    GetPage<dynamic>(
+      name: AppRoutes.HOME_SCREEN,
+      page: () => HomeScreen(),
+      binding: HomeScreenBinding(),
     ),
   ];
 }

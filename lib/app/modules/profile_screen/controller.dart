@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:save_it/app/core/theme/app_colors.dart';
 import 'package:save_it/app/models/bank_details.dart';
 import 'package:save_it/app/routes/app_pages.dart';
-import 'package:save_it/app/services/providers/firebase.dart';
 
 class ProfileScreenController extends GetxController {
   final FICOscore dummyData = FICOscore(

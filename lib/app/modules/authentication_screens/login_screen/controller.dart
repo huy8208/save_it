@@ -24,7 +24,7 @@ class LoginScreenController extends GetxController {
       print('login failed');
     } else if (login == 'loginedSuccessful') {
       isAuthenticated.value = true;
-      Get.offAndToNamed(AppRoutes.HOME_SCREEN);
+      Get.offAndToNamed(AppRoutes.MAIN_SCREEN);
     }
   }
 
