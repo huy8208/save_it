@@ -22,9 +22,9 @@ class MainScreen extends GetView<MainScreenController> {
           child: TabBar(
             tabs: <Tab>[
               _buildTab(Icons.home_filled, 'Home'),
-              _buildTab(Icons.people_alt, 'My Children'),
-              _buildTab(Icons.menu_book_rounded, 'Course'),
-              _buildTab(Icons.notifications, 'Notificaiton'),
+              _buildTab(Icons.people_alt, 'Transaction'),
+              _buildTab(Icons.money_rounded, 'Budget'),
+              _buildTab(Icons.notifications, 'Notification'),
               _buildTab(Icons.person_rounded, 'Profile'),
             ],
           ),

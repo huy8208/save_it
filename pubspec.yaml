@@ -18,7 +18,6 @@ dependencies:
   firebase_core: ^1.13.1
   flutter:
     sdk: flutter
-  flutter_custom_carousel_slider: ^1.2.0
   font_awesome_flutter: ^9.2.0
   get: ^4.6.1
   get_storage: ^2.0.3

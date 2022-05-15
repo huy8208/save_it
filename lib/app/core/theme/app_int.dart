@@ -1,3 +1,3 @@
 class AppInt {
-  static const double defaultPadding = 20;
+  static const double defaultPadding = 10;
 }

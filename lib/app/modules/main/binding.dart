@@ -22,8 +22,7 @@ class MainScreenBinding implements Bindings {
     );
     Get.lazyPut<ProfileScreenController>(() => ProfileScreenController());
     Get.lazyPut<HomeScreenController>(
-      () => HomeScreenController(
-          grabNewsAPI: NewsAPI(NEWS_API), grabFireStore: FireStoreProvider()),
+      () => HomeScreenController(grabFireStore: FireStoreProvider()),
     );
     Get.lazyPut<SpendingChartController>(() => SpendingChartController());
   }
