@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_carousel_slider/flutter_custom_carousel_slider.dart';
 import 'package:get/get.dart';
 import 'package:news_api_flutter_package/model/article.dart';
 import 'package:news_api_flutter_package/news_api_flutter_package.dart';
@@ -9,7 +8,6 @@ import 'package:save_it/app/services/providers/firestore.dart';
 class HomeScreenController extends GetxController {
   HomeScreenController({required this.grabFireStore});
 
-  final NewsAPI grabNewsAPI;
   final FireStoreProvider grabFireStore;
   late List<Article> carousel_news;
 

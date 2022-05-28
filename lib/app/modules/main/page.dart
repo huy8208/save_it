@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_carousel_slider/flutter_custom_carousel_slider.dart';
 import 'package:get/get.dart';
 import 'package:save_it/app/core/theme/app_colors.dart';
 import 'package:save_it/app/core/theme/app_currency.dart';

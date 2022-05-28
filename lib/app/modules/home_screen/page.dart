@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_custom_carousel_slider/flutter_custom_carousel_slider.dart';
 import 'package:get/get.dart';
 import 'package:save_it/app/core/theme/app_colors.dart';
 import 'package:save_it/app/core/theme/app_currency.dart';
@@ -46,7 +45,7 @@ class HomeScreen extends GetView<HomeScreenController> {
             const SizedBox(height: AppInt.defaultPadding),
             _buildMarketIndexes(),
             const SizedBox(height: AppInt.defaultPadding),
-            _buildNewsSider(),
+            // _buildNewsSider(),
             const SizedBox(height: AppInt.defaultPadding),
             _buildRecentTransactions(),
           ],
@@ -90,13 +89,13 @@ class HomeScreen extends GetView<HomeScreenController> {
       child: Column(
         children: [
           const Text('Top Stories'),
-          CustomCarouselSlider(
-            items: await controller.parseHeadline(),
-            height: 150,
-            subHeight: 50,
-            width: Get.width * .9,
-            autoplay: false,
-          ),
+          // CustomCarouselSlider(
+          //   items: await controller.parseHeadline(),
+          //   height: 150,
+          //   subHeight: 50,
+          //   width: Get.width * .9,
+          //   autoplay: false,
+          // ),
         ],
       ),
     );

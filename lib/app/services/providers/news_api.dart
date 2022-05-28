@@ -5,7 +5,7 @@ import 'package:save_it/app/core/utils/keys.dart';
 import 'package:save_it/app/models/news_model.dart';
 
 class NewsAppApi {
-  final NewsAPI _newsAPI = NewsAPI(NEWS_API);
+  static final NewsAPI _newsAPI = NewsAPI(NEWS_API);
 
   Future<List<NewsModel>> getTopHeadlines() async {
     final List<Article> articleList = await _newsAPI.getTopHeadlines();

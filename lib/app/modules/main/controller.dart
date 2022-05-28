@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_carousel_slider/flutter_custom_carousel_slider.dart';
 import 'package:get/get.dart';
 import 'package:news_api_flutter_package/news_api_flutter_package.dart';
 import 'package:save_it/app/services/providers/firebase.dart';
